@@ -13,24 +13,23 @@ class ExchangeEconomyClass:
         # b. endowments
         par.w1A = 0.8
         par.w2A = 0.3
-
-    
+        par.w1B = 1-par.w1A
+        par.w2B = 1-par.w2A
 
     def utility_A(self,x1A,x2A):
-        return par.x1A**par.alpha*par.x2A**(1-par.alpha)
+        return x1A**self.alpha*x2A**(1-self.alpha)
 
     def utility_B(self,x1B,x2B):
-        return par.x1B**par.beta*par.x2B**(1-par.beta)
+        return x1B**self.beta*x2B**(1-self.beta)
 
-
-    def demand_A(self,p1,p2):
-        x1A = par.alpha*(p1*par.w1A+p2*par.w2A)/p1
-        x2A = (1-par.alpha)*(p1*par.w1A+p2*par.w2A)/p2
+    def demand_A(self,p1):
+        x1A = self.alpha*(p1*self.w1A+self.w2A)/p1
+        x2A = (1-self.alpha)*(p1*self.w1A+self.w2A) 
         return x1A, x2A
 
     def demand_B(self,p1):
-        x1B = par.beta*(p1*par.w1B+p2*par.w2B)/p1
-        x2B = (1-par.beta)*(p1*par.w1B+p2*par.w2B)/p2
+        x1B = self.beta*(p1*self.w1B+self.w2B)/p1
+        x2B = (1-self.beta)*(p1*self.w1B+self.w2B)
         return x1B, x2B 
         
 
