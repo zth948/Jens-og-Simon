@@ -17,19 +17,23 @@ class ExchangeEconomyClass:
         par.w2B = 1-par.w2A
 
     def utility_A(self,x1A,x2A):
-        return x1A**self.alpha*x2A**(1-self.alpha)
+        par = self.par
+        return x1A**par.alpha*x2A**(1-par.alpha)
 
     def utility_B(self,x1B,x2B):
-        return x1B**self.beta*x2B**(1-self.beta)
+        par = self.par
+        return x1B**par.beta*x2B**(1-par.beta)
 
     def demand_A(self,p1):
-        x1A = self.alpha*(p1*self.w1A+self.w2A)/p1
-        x2A = (1-self.alpha)*(p1*self.w1A+self.w2A) 
+        par = self.par
+        x1A = par.alpha*(p1*par.w1A+par.w2A)/p1
+        x2A = (1-par.alpha)*(p1*par.w1A+par.w2A) 
         return x1A, x2A
 
     def demand_B(self,p1):
-        x1B = self.beta*(p1*self.w1B+self.w2B)/p1
-        x2B = (1-self.beta)*(p1*self.w1B+self.w2B)
+        par = self.par
+        x1B = par.beta*(p1*par.w1B+par.w2B)/p1
+        x2B = (1-par.beta)*(p1*par.w1B+par.w2B)
         return x1B, x2B 
         
 
