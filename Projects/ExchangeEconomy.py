@@ -81,7 +81,7 @@ class ExchangeEconomyClass:
             remaining_x1A = 1- x1_B_star
             remaining_x2A = 1- x2_B_star
 
-            # ccalculate A's utility 
+            # calculate A's utility 
             if remaining_x1A >= 0 and remaining_x2A >= 0:
                 utility_for_A = self.utility_A(remaining_x1A,remaining_x2A)
             else:
